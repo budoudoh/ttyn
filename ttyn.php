@@ -23,17 +23,13 @@
 			record("", array (
 			    "maxTime" => 30,
 			    "transcriptionOutURI" => "mailto:budoudoh@gmail.com",
-			    "onSignal" => "speakMessage"
-			    )
+			    "onSignal" => function($event){
+			    	say("Your call has been interrupted!");
+	 				say($event->value);		
+			    })
 			);
 			say("Recording is done!");
 		}
-	 }
-	 
-	 function speakMessage($event)
-	 {
-	 	say("Your call has been interrupted!");
-	 	say($event->value);	
 	 }
 	 
 	 function sendMessage()
