@@ -68,7 +68,7 @@
 	 {
 		if($numTo)
 		{
-			$currentCall = call($numTo);
+			call($numTo);
 			
 			$initial_speach = "You are receiving a call from $appname.";
 			if($caller)
