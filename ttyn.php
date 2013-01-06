@@ -23,6 +23,7 @@
 			record("", array (
 			    "maxTime" => 30,
 			    "transcriptionOutURI" => "mailto:budoudoh@gmail.com",
+			    "allowSignals" => 'exit',
 			    "onSignal" => function($event){
 			    	say("Your call has been interrupted!");
 	 				say($event->value);		
