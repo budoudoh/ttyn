@@ -21,7 +21,7 @@
 	 	say("Your call has begun.");
 	 	while(true)
 		{
-			/*record("", array (
+			record("", array (
 			    "maxTime" => 60,
 			    "silenceTimeout" => 2,
 			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
@@ -31,13 +31,13 @@
 	 				say($event->value);		
 			    })
 			);
-			 */
-			 startCallRecording("https://doublewindsortech.com:8000/Something", array (
+			 
+			 /*startCallRecording("https://doublewindsortech.com:8000/Something", array (
 			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
 			    "transcriptionID" => $currentCall->sessionId)
-			);
+			);*/
 			
-			wait(30000, array (
+			wait(5000, array (
 			    "onSignal" => function($event){
 			    	_log("Testing");
 					stopCallRecording();
@@ -45,7 +45,7 @@
 			  	})
 			);  
 			
-			stopCallRecording();
+			//stopCallRecording();
 		}
 	 }
 	 
