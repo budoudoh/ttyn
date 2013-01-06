@@ -20,7 +20,7 @@
 	 	say("Your call has begun.");
 	 	while(true)
 		{
-			record("", array (
+			record($currentCall->id, array (
 			    "maxTime" => 30,
 			    "transcriptionOutURI" => "mailto:budoudoh@gmail.com",
 			    "allowSignals" => 'exit',
