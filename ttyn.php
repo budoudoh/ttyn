@@ -5,7 +5,7 @@
 	 $appname = "Talk To Me Now";
 	 function initialChoice($event)
 	 {
-	 	if(false)
+	 	if($event->value == 1)
 		{
 			callRecorder();		
 		}
@@ -17,7 +17,17 @@
 			 
 	 function callRecorder()
 	 {
-	 	
+	 	say("Your call has begun.");
+	 	while(true)
+		{
+			record(array (
+			    "maxTime" => 30,
+			    "recordURI"=>"http://example.com/recording.php",
+			    "transcriptionOutURI" => "mailto:budoudoh@gmail.com",
+			    "transcriptionID" => $currentCall->id
+			    )
+			);
+		}
 	 }
 	 
 	 function sendMessage()
@@ -34,6 +44,7 @@
 	 
 	 function messageSender($event)
 	 {
+	 	global $appname;
 	 	if($numFrom)
 		{
 			say("Your Message has been sent. Thank you for using $appname");
@@ -57,12 +68,12 @@
 	 {
 		if($numTo)
 		{
-			call($numTo);
+			$currentCall = call($numTo);
 			
 			$initial_speach = "You are receiving a call from $appname.";
 			if($caller)
 			{
-				$initial_speach = $caller." is would like to chat with you using the $appname.";
+				$initial_speach = $caller." is would like to chat with you using $appname.";
 			}
 			
 			$initial_speach = $initial_speach." If you would like to continue, press 1. If not, press 2 to send the caller a message.";
