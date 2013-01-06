@@ -26,14 +26,13 @@
 			    "silenceTimeout" => 2,
 			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
 			    "transcriptionID" => $currentCall->sessionId, 
-			    "allowSignals" => 'exit',
+			    "allowSignals" => '')
+			);
+			wait(1000, array (
 			    "onSignal" => function($event){
-			    	_log("Testing");
-					say("Your call has been interrupted!");
 	 				say($event->value);		
 			    })
 			);
-			say("Recording is done!");
 		}
 	 }
 	 
