@@ -2,7 +2,7 @@
     /*
 	 * TTYN.php: Main PHP file for TTYN Application
 	 */
-	 $appname = "Talk To Me Now";
+	 $appname = "Talk To You Now";
 	 function initialChoice($event)
 	 {
 	 	if($event->value == 1)
