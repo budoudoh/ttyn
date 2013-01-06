@@ -28,8 +28,8 @@
 			    "transcriptionID" => $currentCall->sessionId, 
 			    "allowSignals" => 'exit',
 			    "onSignal" => function($event){
-			    	log("Testing");
-			    	say("Your call has been interrupted!");
+			    	_log("Testing");
+					say("Your call has been interrupted!");
 	 				say($event->value);		
 			    })
 			);
@@ -104,7 +104,7 @@
 		if($numTo)
 		{
 			call($numTo);
-			log("Making Call");
+			_log("Making Call");
 			$initial_speach = "You are receiving a call from $appname.";
 			if($caller)
 			{
