@@ -70,6 +70,7 @@
 			say($initial_speach);
 			
 			ask($initial_speach, array(
+					"choices" => "[1 DIGITS]",
 			        "timeout" => 15.0,
 			        "mode" => "dtmf",
 			        "interdigitTimeout" => 2,
