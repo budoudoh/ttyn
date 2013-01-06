@@ -24,8 +24,7 @@
 			record("", array (
 			    "maxTime" => 30,
 			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
-			    "transcriptionID" => $currentCall->id,
-			    /*"recordURI"=>"http://doublewindsortech.com/ttyn/check.php",*/ 
+			    "transcriptionID" => $currentCall->sessionId, 
 			    "allowSignals" => 'exit',
 			    "onSignal" => function($event){
 			    	say("Your call has been interrupted!");
@@ -68,7 +67,35 @@
 	 
 	 if($currentCall) //Check if current call object exists
 	 {
-		
+	 	say("Setting up your phone call using $appname");
+	 	$requestBody = json_encode(array('sessionId' => $currentCall->sessionId, 'numFrom'=>$currentCall->callerID));
+		$url = $FQDN . "/rest/1/Sessions/".$session_id."/Signals";
+	    $content = "Content-Type: application/json";
+	 
+	    //Invoke the URL
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_POST, 1);
+        curl_setopt($curl, CURLOPT_HEADER, 0);
+        curl_setopt($curl, CURLINFO_HEADER_OUT, 0);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array (
+            $content
+        ));
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $requestBody);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        $curl_response = curl_exec($curl);
+        $responseCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+ 
+        if ($responseCode == 200) 
+        {
+        	echo $CMS_response;
+            /*$jsonResponse = json_decode($CMS_response, true);
+            $id = $jsonResponse["id"];
+    		$success = $jsonResponse["success"];
+    		$_SESSION["id"] = $id;
+    		$_SESSION["success"] = $success;*/
+		}
 	 }
 	 else 
 	 {
