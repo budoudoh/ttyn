@@ -17,6 +17,7 @@
 			 
 	 function callRecorder()
 	 {
+	 	global $currentCall;
 	 	say("Your call has begun.");
 	 	while(true)
 		{
@@ -71,7 +72,7 @@
 	 {
 		if($numTo)
 		{
-			call($numTo, array('callerID'=>$numFrom));
+			call($numTo);
 			
 			$initial_speach = "You are receiving a call from $appname.";
 			if($caller)
