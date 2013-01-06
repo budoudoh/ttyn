@@ -6,7 +6,6 @@
 		while(true)
 		{
 		    wait(30000, array (
-					    "allowSignals" => 'exit',
 					    "onSignal" => function($event){
 					    	_log("Testing");
 							say("Your call has been interrupted!");
