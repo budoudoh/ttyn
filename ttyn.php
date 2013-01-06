@@ -5,7 +5,8 @@
 	 
 	 if($currentCall)
 	 {
-	 	say("The currentCall Object does exist.");
+	 	$session_id = $currentCall->id;
+	 	say("The session ID is ".$session_id);
 	 }
 	 else 
 	 {
