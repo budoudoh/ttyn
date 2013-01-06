@@ -20,14 +20,18 @@
 	 	say("Your call has begun.");
 	 	while(true)
 		{
-			record(array (
+			record("", array (
 			    "maxTime" => 30,
-			    "recordURI"=>"http://example.com/recording.php",
 			    "transcriptionOutURI" => "mailto:budoudoh@gmail.com",
-			    "transcriptionID" => $currentCall->id
+			    "onSignal" => "speakMessage"
 			    )
 			);
 		}
+	 }
+	 
+	 function speakMessage($event)
+	 {
+	 	say($event->value);	
 	 }
 	 
 	 function sendMessage()
