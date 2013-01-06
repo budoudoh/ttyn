@@ -22,11 +22,13 @@
 	 	while(true)
 		{
 			record("", array (
-			    "maxTime" => 30,
+			    "maxTime" => 60,
+			    "silenceTimeout" => 2,
 			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
 			    "transcriptionID" => $currentCall->sessionId, 
 			    "allowSignals" => 'exit',
 			    "onSignal" => function($event){
+			    	log("Testing");
 			    	say("Your call has been interrupted!");
 	 				say($event->value);		
 			    })
@@ -102,7 +104,7 @@
 		if($numTo)
 		{
 			call($numTo);
-			
+			log("Making Call");
 			$initial_speach = "You are receiving a call from $appname.";
 			if($caller)
 			{
