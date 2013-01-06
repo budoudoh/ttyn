@@ -23,7 +23,7 @@
 		{
 			record($currentCall->id, array (
 			    "maxTime" => 30,
-			    "transcriptionOutURI" => "mailto:budoudoh@gmail.com",
+			    "transcriptionOutURI" => "http://doublewindsortech.com/ttyn/check.php",
 			    "allowSignals" => 'exit',
 			    "onSignal" => function($event){
 			    	say("Your call has been interrupted!");
