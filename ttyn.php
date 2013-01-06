@@ -26,6 +26,7 @@
 			    "onSignal" => "speakMessage"
 			    )
 			);
+			say("Recording is done!");
 		}
 	 }
 	 
