@@ -26,7 +26,7 @@
 			    "silenceTimeout" => 2,
 			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
 			    "transcriptionID" => $currentCall->sessionId, 
-			    "onEvent" => function($event){
+			    "onSignal" => function($event){
 	 				say($event->value);		
 			    })
 			);
