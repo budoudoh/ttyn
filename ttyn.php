@@ -21,9 +21,10 @@
 	 	say("Your call has begun.");
 	 	while(true)
 		{
-			record($currentCall->id, array (
+			record("", array (
 			    "maxTime" => 30,
 			    "transcriptionOutURI" => "http://doublewindsortech.com/ttyn/check.php",
+			    "recordURI"=>"http://doublewindsortech.com/ttyn/check.php", 
 			    "allowSignals" => 'exit',
 			    "onSignal" => function($event){
 			    	say("Your call has been interrupted!");
