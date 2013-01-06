@@ -26,13 +26,11 @@
 			    "silenceTimeout" => 2,
 			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
 			    "transcriptionID" => $currentCall->sessionId, 
-			    "allowSignals" => '')
-			);
-			wait(1000, array (
-			    "onSignal" => function($event){
+			    "onEvent" => function($event){
 	 				say($event->value);		
 			    })
 			);
+			
 		}
 	 }
 	 
