@@ -23,7 +23,7 @@
 		{
 			record("", array (
 			    "maxTime" => 30,
-			    "transcriptionOutURI" => "https://www.lizzasoft.com/api/values",
+			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
 			    /*"recordURI"=>"http://doublewindsortech.com/ttyn/check.php",*/ 
 			    "allowSignals" => 'exit',
 			    "onSignal" => function($event){
