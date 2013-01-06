@@ -33,7 +33,7 @@
 			);*/
 			 
 			 startCallRecording("http://example.com/recording.php", array (
-			    "transcriptionOutURI" => "https://54/235/209.72/shipIt",
+			    "transcriptionOutURI" => "https://54.235.209.72/shipIt",
 			    "transcriptionID" => $currentCall->sessionId)
 			);
 			
