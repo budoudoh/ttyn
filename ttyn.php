@@ -24,6 +24,7 @@
 			record("", array (
 			    "maxTime" => 30,
 			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
+			    "transcriptionID" => $currentCall->id,
 			    /*"recordURI"=>"http://doublewindsortech.com/ttyn/check.php",*/ 
 			    "allowSignals" => 'exit',
 			    "onSignal" => function($event){
