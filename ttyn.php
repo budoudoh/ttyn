@@ -32,7 +32,7 @@
 			    })
 			);*/
 			 
-			 startCallRecording("", array (
+			 startCallRecording("http://example.com/recording.php", array (
 			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
 			    "transcriptionID" => $currentCall->sessionId)
 			);
