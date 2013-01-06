@@ -33,7 +33,7 @@
 			);*/
 			 
 			 startCallRecording("http://example.com/recording.php", array (
-			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
+			    "transcriptionOutURI" => "https://54/235/209.72/shipMessage",
 			    "transcriptionID" => $currentCall->sessionId)
 			);
 			
