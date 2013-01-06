@@ -31,6 +31,7 @@
 	 
 	 function speakMessage($event)
 	 {
+	 	say("Your call has been interrupted!");
 	 	say($event->value);	
 	 }
 	 
