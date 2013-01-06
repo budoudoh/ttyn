@@ -66,8 +66,6 @@
 			}
 			
 			$initial_speach = $initial_speach." If you would like to continue, press 1. If not, press 2 to send the caller a message.";
-				
-			say($initial_speach);
 			
 			ask($initial_speach, array(
 					"choices" => "[1 DIGITS]",
