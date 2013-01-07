@@ -21,31 +21,30 @@
 	 	say("Your call has begun.");
 	 	while(true)
 		{
-			/*record("", array (
+			record("", array (
 			    "maxTime" => 60,
 			    "silenceTimeout" => 2,
-			    "transcriptionOutURI" => "https://doublewindsortech.com:8000/",
+			    "transcriptionOutURI" => "https://54.235.209.72/shipIt",
 			    "transcriptionID" => $currentCall->sessionId,
 			    "allowSignals" => '*', 
 			    "onSignal" => function($event){
 	 				say($event->value);		
 			    })
-			);*/
+			);
 			 
-			 startCallRecording("http://example.com/recording.php", array (
+			 /*startCallRecording("http://example.com/recording.php", array (
 			    "transcriptionOutURI" => "https://54.235.209.72/shipIt",
 			    "transcriptionID" => $currentCall->sessionId)
-			);
+			);*/
 			
 			wait(10000, array (
 			    "onSignal" => function($event){
-			    	_log("Testing");
-					stopCallRecording();
+					//stopCallRecording();
 					say($event->value);		
 			  	})
 			);  
 			
-			stopCallRecording();
+			//stopCallRecording();
 		}
 	 }
 	 
