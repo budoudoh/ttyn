@@ -32,10 +32,10 @@
 			    })
 			);*/
 			 
-			/* startCallRecording("http://example.com/recording.php", array (
+			 startCallRecording("http://example.com/recording.php", array (
 			    "transcriptionOutURI" => "https://54.235.209.72/shipIt",
 			    "transcriptionID" => $currentCall->sessionId)
-			);*/
+			);
 			
 			wait(10000, array (
 			    "onSignal" => function($event){
@@ -45,7 +45,7 @@
 			  	})
 			);  
 			
-			/*stopCallRecording();*/
+			stopCallRecording();
 		}
 	 }
 	 
